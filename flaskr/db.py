@@ -3,6 +3,7 @@ import sqlite3
 import click 
 from flask import current_app, g 
 
+
 def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
@@ -19,6 +20,7 @@ def init_db_command():
     init_db()
     click.echo('Initialized the database')
 
+
 def get_db():
     if 'db' not in g:
         g.db = sqlite3.connect(
@@ -27,6 +29,7 @@ def get_db():
         )
         g.db.row_factory = sqlite3.Row 
     return g.db 
+
 
 def close_db(e=None):
     db = g.pop('db', None)
