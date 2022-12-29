@@ -79,15 +79,14 @@ def login_post():
 @bp.get("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("index"))
+    return redirect(url_for("auth.login_get"))
 
 
 def login_required(view):
-    @functools.wrap(view)
+    @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None:
-            return redirect(url_for("auth.login"))
-
+            return redirect(url_for("auth.login_get"))
         return view(**kwargs)
     return wrapped_view
 
