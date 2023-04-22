@@ -1,0 +1,5 @@
+// install current project in editable/development mode into the virtual environment
+pip install -e .
+
+// list installed packages
+pip list
