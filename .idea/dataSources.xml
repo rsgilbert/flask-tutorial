@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="flaskr.sqlite" uuid="82b1c69a-0ab9-4ff2-8db5-395b0c4343fb">
+    <data-source source="LOCAL" name="instance/flaskr.sqlite" uuid="4cd560c1-ab4e-4c4d-b78d-b8b03422bb81">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
+      <remarks>flaskr data source</remarks>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/instance/flaskr.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>

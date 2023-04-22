@@ -3,3 +3,10 @@ pip install -e .
 
 // list installed packages
 pip list
+
+// run flaskr app
+flask --app flaskr run
+
+
+
+
