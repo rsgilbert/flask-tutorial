@@ -26,6 +26,36 @@ TOTAL                  175     84     34      0    47%
 coverage html
 
 
+// deploying to production
+// see: https://flask.palletsprojects.com/en/2.2.x/tutorial/deploy/
+// 1. build a wheel distribution file
+pip install wheel
+
+// 2. Copy .whl file to new machine with python installed.
+
+// 3. From new machine, create a new virtualenv and activate it
+python -m venv venv
+.\venv\Scripts\activate
+
+// 4. install the wheel file
+pip install .\flaskr-1.0.0-py3-none-any.whl
+
+// 5. Run init-db to create the database again
+// The database file will located in directory .\venv\var\flaskr-instance
+flask --app flaskr init-db
+
+// 6. Configure secret key
+// Generate random secret key:
+ python -c 'import secrets; print(secrets.token_hex())'
+// put the SECRET_KEY in ./venv/var/flaskr-instance/config.py
+
+// 7. Run with production server
+pip install waitress
+waitress-serve --listen 0.0.0.0:5001 --call 'flaskr:create_app'
+
+
+
+
 
 
 
